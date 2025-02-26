@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Homepage</title>
+    <link rel="stylesheet" href="/homepageStyles.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  </head>
+
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="intro">
+      <h1 class="intro-heading">Welcome to Pokéworld</h1>
+      <p style="color: #d4a373">
+        Let's learn something interesting about POKEMONS!
+      </p>
+    </div>
+    <main id="main-content">
+      <div style="background-color: #fcbf49" class="card">
+        <h2 class="card-heading">Pikachu - An Electric Pokemon</h2>
+        <div class="info">
+          <img src="/assets/pikachu.png" alt="" class="pokemon-img" />
+          <p class="about">
+            An Electric-type Pokémon known for its adorable looks, cheerful
+            personality, and powerful Thunderbolt attack. Pikachu stores
+            electricity in its cheeks and can release shocking bursts of energy
+            in battle. As the mascot of the Pokémon franchise, it's one of the
+            most beloved Pokémon worldwide!
+          </p>
+        </div>
+      </div>
+
+      <div style="background-color: #ef6d30e8" class="card">
+        <h2 class="heading">Charmender - A Fire Pokemon</h2>
+        <div class="info">
+          <img src="/assets/charmander.jpg" alt="" class="pokemon-img" />
+          <p class="about">
+            A Fire-type Pokémon with a small flame burning at the tip of its
+            tail, which represents its health and emotions. Charmander is loyal,
+            determined, and full of fiery spirit. As it evolves, it grows into
+            the fearsome Charizard, gaining the ability to fly and unleash
+            devastating fire attacks!
+          </p>
+        </div>
+      </div>
+
+      <div style="background-color: #638f62" class="card">
+        <h2 class="heading">Bulbasaur - A Grass Pokemon</h2>
+        <div class="info">
+          <img src="/assets/bulbasaur.png" alt="" class="pokemon-img" />
+          <p class="about">
+            A Grass/Poison-type Pokémon with a plant bulb on its back that grows
+            as it matures. Bulbasaur is known for its calm nature, balanced
+            stats, and ability to use powerful Grass-type moves like Vine Whip.
+            It evolves into Venusaur, a powerhouse with a giant flower that
+            absorbs sunlight for energy!
+          </p>
+        </div>
+      </div>
+
+      <div style="background-color: #8ecae6" class="card">
+        <h2 class="heading">Squirtle - A Water Pokemon</h2>
+        <div class="info">
+          <img src="/assets/Squirtle.png" alt="" class="pokemon-img" />
+          <p class="about">
+            A Water-type Pokémon with a hard shell for defense and a playful yet
+            courageous personality. Squirtle can shoot powerful water jets from
+            its mouth and quickly retreat into its shell for protection. Over
+            time, it evolves into Blastoise, gaining massive water cannons and
+            becoming a formidable force in battle!
+          </p>
+        </div>
+      </div>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
