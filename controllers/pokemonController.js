@@ -1,11 +1,10 @@
 const db = require("../db/queries");
 
 async function getAllPokemons(req, res) {
-  // const pokemons = await db.getAllPokemons();
+  const pokemons = await db.getAllPokemons();
   res.render("pokemonPage", {
     title: "Pokemons",
-    // pokemons,
-    //images of all the pokemons
+    pokemons
   })
 };
 

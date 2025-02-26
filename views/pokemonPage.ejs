@@ -15,7 +15,21 @@
   </head>
   <body>
     <%- include("./partials/navbar.ejs") %>
-    <div><h1>Hello This is pokemon page</h1></div>
+    <main id="main-content">
+      <% pokemons.forEach((pokemon) => { %>
+      <div class="card" style="background-color: '#f9f9f9'">
+        <h2 class="card-heading"><%= pokemon.pokemon_name %> - A Pokémon</h2>
+        <div class="info">
+          <img
+            src="<%= pokemon.image_path %>"
+            alt="<%= pokemon.pokemon_name %>"
+            class="pokemon-img"
+          />
+          <p class="about"><%= pokemon.description %></p>
+        </div>
+      </div>
+      <% }); %>
+    </main>
     <%- include("./partials/footer.ejs") %>
   </body>
 </html>
