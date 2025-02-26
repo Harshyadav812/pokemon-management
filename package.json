@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "prebuild": "npm cache clean --force",
+    "build": "npm install --omit=dev"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
