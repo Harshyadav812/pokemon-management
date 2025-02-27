@@ -8,14 +8,14 @@ async function getAllPokemons(req, res) {
   })
 };
 
-// async function getPokemonById(req, res) {
-//   const id = req.params.id;
-//   const pokemon = await db.getPokemonById(id);
-//   res.render("searchedPokemon", {
-//     title: `${pokemon}`,
-//     //about the pokemon
-//   })
-// }
+async function getPokemonById(req, res) {
+  const id = req.params.id;
+  const pokemon = await db.getPokemonById(id);
+  res.render("pokemonDetail", {
+    title: `${pokemon.pokemon_name}`,
+    pokemon
+  })
+}
 
-module.exports = { getAllPokemons }
+module.exports = { getAllPokemons, getPokemonById }
 // getPokemonById
