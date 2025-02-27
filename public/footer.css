@@ -4,3 +4,15 @@
   text-align: center;
   background-color: #fdf0d5;
 }
+
+@media (max-width: 768px) {
+  #footer {
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  #footer {
+    min-width: 280px;
+  }
+}

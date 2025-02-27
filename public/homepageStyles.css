@@ -9,6 +9,8 @@ body {
   background-color: #fff8e7;
   min-height: 100vh;
   width: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 
 .intro {
@@ -31,7 +33,7 @@ body {
 
 .card {
   max-width: 65%;
-  /* min-width: 500px; */
+  min-width: 280px;
   height: auto;
   padding: 1rem;
   border-radius: 5px;
@@ -56,11 +58,22 @@ body {
 }
 
 @media (max-width: 768px) {
+  #main-content {
+    align-items: center;
+  }
   .card {
     width: 100%;
     max-width: 100%;
-    min-width: 360px;
+    align-self: center !important;
+  }
+
+  .card:nth-child(odd),
+  .card:nth-child(even) {
     align-self: center;
+  }
+
+  .intro-heading {
+    font-size: 2.5rem; /* Smaller heading on mobile */
   }
 }
 
@@ -91,6 +104,7 @@ body {
   line-height: 1.5;
   word-wrap: break-word;
   max-width: 100%;
+  min-width: 260px;
 }
 
 @media (max-width: 768px) {
