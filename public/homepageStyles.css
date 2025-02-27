@@ -144,6 +144,14 @@ body {
   .card {
     padding: 0.75rem;
     min-width: 260px; /* Minimum width for cards on small screens */
+    transform: none;
+    transition: none;
+  }
+
+  .card:hover {
+    box-shadow: none;
+    transform: none;
+    transition: none;
   }
 
   .intro {
