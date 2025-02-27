@@ -1,10 +1,14 @@
 #navbar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem 1rem 1rem;
   background-color: #fdf0d5;
   width: 100%;
+  gap: 2rem;
 }
 
 .logo {

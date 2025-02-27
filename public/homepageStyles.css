@@ -59,6 +59,7 @@ body {
   .card {
     width: 100%;
     max-width: 100%;
+    min-width: 360px;
     align-self: center;
   }
 }
