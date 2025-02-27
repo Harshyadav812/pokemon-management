@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/pokemon.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <h1 class="heading"><%=pokemon.pokemon_name%></h1>
+    <div class="pokemon-detail">
+      <div class="image-col">
+        <img
+          src="<%= pokemon.image_path %>"
+          alt="<%=pokemon.name%>"
+          style="width: 200px; height: 250px"
+          class="pokemon-img"
+        />
+      </div>
+
+      <div class="pokemon-info">
+        <p><strong>Type: </strong><%= pokemon.type_name %></p>
+        <p><strong>Trainer: </strong><%= pokemon.trainer_name %></p>
+        <p><strong>Description: </strong><%= pokemon.description %></p>
+      </div>
+    </div>
+  </body>
+</html>
