@@ -15,12 +15,14 @@ body {
 
 .intro {
   padding: 2rem;
+  padding-top: 3rem;
   text-align: center;
 }
 
 .intro-heading {
   font-size: 4rem;
   color: #dfa60a;
+  margin-top: 1rem;
 }
 
 #main-content {
@@ -60,10 +62,21 @@ body {
 @media (max-width: 768px) {
   #main-content {
     align-items: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .intro {
+    padding-top: 2rem;
+  }
+
+  .intro-heading {
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
   }
   .card {
     width: 100%;
     max-width: 100%;
+    min-width: 280px;
     align-self: center !important;
   }
 
@@ -104,7 +117,6 @@ body {
   line-height: 1.5;
   word-wrap: break-word;
   max-width: 100%;
-  min-width: 260px;
 }
 
 @media (max-width: 768px) {
@@ -120,5 +132,31 @@ body {
 
   .info .about {
     width: 100%;
+    /* min-width: 260px; */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    min-width: 300px; /* Minimum width for very small devices */
+  }
+
+  .card {
+    padding: 0.75rem;
+    min-width: 260px; /* Minimum width for cards on small screens */
+  }
+
+  .intro {
+    padding: 1.5rem 1rem;
+    padding-top: 2.5rem; /* Extra space for navbar on very small screens */
+  }
+
+  .intro-heading {
+    font-size: 2rem;
+    margin-top: 1.5rem; /* Maintain top margin on small screens */
+  }
+
+  #main-content {
+    padding: 1rem;
   }
 }
