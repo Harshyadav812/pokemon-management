@@ -18,7 +18,11 @@ async function getAllPokemons() {
 }
 
 async function getPokemonById(id) {
-  const query = "SELECT * FROM pokemons WHERE pokemon_id = $1;"
+  const query = `SELECT pokemons.*, types.type_name AS type_name, trainers.trainer_name
+  FROM pokemons
+  JOIN types ON pokemons.type_id = types.id
+  JOIN trainers ON pokemons.trainer_id = trainers.id
+  WHERE pokemons.id = $1`
   try {
     const res = await pool.query(query, [id]);
     return res.rows[0];
@@ -40,7 +44,7 @@ async function getAllTrainers() {
 }
 
 async function getTrainerById(id) {
-  const query = "SELECT * FROM trainers WHERE trainer_id = $1";
+  const query = `SELECT * FROM trainers WHERE trainer_id = $1`;
   try {
     const res = await pool.query(query, [id]);
     return res.rows[0];
@@ -62,7 +66,7 @@ async function getAllTypes() {
 }
 
 async function getTypeById(id) {
-  const query = "SELECT * FROM types WHERE type_id = $1";
+  const query = `SELECT * FROM types WHERE type_id = $1`;
   try {
     const res = await pool.query(query, [id]);
     return res.rows[0];
