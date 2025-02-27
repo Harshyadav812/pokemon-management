@@ -17,17 +17,19 @@
     <%- include("./partials/navbar.ejs") %>
     <main id="main-content">
       <% pokemons.forEach((pokemon) => { %>
-      <div class="card" style="background-color: '#f9f9f9'">
-        <h2 class="card-heading"><%= pokemon.pokemon_name %></h2>
-        <div class="info">
-          <img
-            src="<%= pokemon.image_path %>"
-            alt="<%= pokemon.pokemon_name %>"
-            class="pokemon-img"
-          />
-          <p class="about"><%= pokemon.description %></p>
+      <a href="/pokemons/<%= pokemon.id %>" class="pokemon-link-card">
+        <div class="card" style="background-color: '#f9f9f9'">
+          <h2 class="card-heading"><%= pokemon.pokemon_name %></h2>
+          <div class="info">
+            <img
+              src="<%= pokemon.image_path %>"
+              alt="<%= pokemon.pokemon_name %>"
+              class="pokemon-img"
+            />
+            <p class="about"><%= pokemon.description %></p>
+          </div>
         </div>
-      </div>
+      </a>
       <% }); %>
     </main>
     <%- include("./partials/footer.ejs") %>
