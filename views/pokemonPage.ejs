@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <link rel="stylesheet" href="/homepageStyles.css" />
+    <link rel="stylesheet" href="/pokemonPage.css" />
     <link rel="stylesheet" href="/navbar.css" />
     <link rel="stylesheet" href="/footer.css" />
     <link
@@ -18,7 +18,7 @@
     <main id="main-content">
       <% pokemons.forEach((pokemon) => { %>
       <div class="card" style="background-color: '#f9f9f9'">
-        <h2 class="card-heading"><%= pokemon.pokemon_name %> - A Pokémon</h2>
+        <h2 class="card-heading"><%= pokemon.pokemon_name %></h2>
         <div class="info">
           <img
             src="<%= pokemon.image_path %>"
