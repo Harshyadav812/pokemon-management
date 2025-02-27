@@ -52,28 +52,10 @@ body {
   margin-bottom: 18px;
 }
 
-.info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
 .pokemon-img {
   max-height: 200px;
   max-width: 100%;
   width: auto;
-}
-
-.info .about {
-  /* flex: 1; */
-  font-family: "Poppins";
-  font-size: 1rem;
-  line-height: 1.5;
-  word-wrap: break-word;
-  max-width: 100%;
 }
 
 @media (max-width: 480px) {
