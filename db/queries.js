@@ -33,7 +33,7 @@ async function getPokemonById(id) {
 }
 
 async function getAllTrainers() {
-  const query = "SELECT * FROM trainers ORDER By trainer_id;"
+  const query = "SELECT * FROM trainers ORDER By id;"
   try {
     const res = await pool.query(query);
     return res.rows;
@@ -44,7 +44,7 @@ async function getAllTrainers() {
 }
 
 async function getTrainerById(id) {
-  const query = `SELECT * FROM trainers WHERE trainer_id = $1`;
+  const query = `SELECT * FROM trainers WHERE id = $1`;
   try {
     const res = await pool.query(query, [id]);
     return res.rows[0];
@@ -55,7 +55,7 @@ async function getTrainerById(id) {
 }
 
 async function getAllTypes() {
-  const query = "SELECT * FROM types ORDER BY type_id";
+  const query = "SELECT * FROM types ORDER BY id";
   try {
     const res = await pool.query(query);
     return res.rows;
@@ -65,15 +65,21 @@ async function getAllTypes() {
   }
 }
 
-async function getTypeById(id) {
-  const query = `SELECT * FROM types WHERE type_id = $1`;
+async function getPokemonsByType(type_id) {
+  const query = `SELECT DISTINCT ON (pokemons.pokemon_name)
+  pokemons.id,
+  pokemons.pokemon_name, pokemons.image_path,
+  types.type_name
+  FROM pokemons
+  JOIN types ON types.id = pokemons.type_id
+  WHERE pokemons.type_id = $1`;
   try {
-    const res = await pool.query(query, [id]);
-    return res.rows[0];
+    const res = await pool.query(query, [type_id]);
+    return res.rows;
   } catch (err) {
     console.error("Error fetching type by ID: ", err);
     throw err;
   }
 }
 
-module.exports = { getAllPokemons, getPokemonById, getAllTrainers, getTrainerById, getAllTypes, getTypeById };
+module.exports = { getAllPokemons, getPokemonById, getAllTrainers, getTrainerById, getAllTypes, getPokemonsByType };
