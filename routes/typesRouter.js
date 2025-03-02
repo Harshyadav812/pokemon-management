@@ -1,11 +1,11 @@
 const { Router } = require("express");
-const typesController = require("../controllers/typesController")
 const typesRouter = Router();
+const typesController = require("../controllers/typesController")
 
 typesRouter.get("/", typesController.getAllTypes);
+typesRouter.get("/:id", typesController.getPokemonsByType)
 // typesRouter.get("/create", typesController.typesCreateGet);
 // typesRouter.post("/create", typesController.typesCreatePost);
-typesRouter.get("/:id", typesController.getTypeById)
 
 
 module.exports = typesRouter;
