@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/pokemonPage.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <main class="main-content">
+      <% trainers.forEach((trainer) => {%>
+      <a
+        href="/trainers/<%=trainer.id%>"
+        class="trainer-card pokemon-link-card card"
+      >
+        <%= trainer.trainer_name %>
+      </a>
+      <%});%>
+    </main>
+  </body>
+</html>
