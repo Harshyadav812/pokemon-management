@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/pokemonPage.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <main class="main-content">
+      <% types.forEach((type) => {%>
+      <a href="/types/<%=type.id%>" class="type-link pokemon-link-card card">
+        <%= type.type_name %>
+      </a>
+      <%});%>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
