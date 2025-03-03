@@ -15,7 +15,7 @@
   </head>
   <body>
     <%- include("./partials/navbar.ejs") %>
-    <main id="main-content">
+    <main class="main-content">
       <% pokemons.forEach((pokemon) => { %>
       <a href="/pokemons/<%= pokemon.id %>" class="pokemon-link-card">
         <div class="card" style="background-color: '#f9f9f9'">
@@ -31,6 +31,12 @@
       </a>
       <% }); %>
     </main>
+    <div class="btn-container">
+      <button class="add-pokemon-btn">
+        <a href="/pokemons/create">Add Pokemon</a>
+      </button>
+    </div>
+
     <%- include("./partials/footer.ejs") %>
   </body>
 </html>
