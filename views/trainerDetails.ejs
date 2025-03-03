@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/trainerDetail.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <main class="container">
+      <section class="trainer-card">
+        <div class="card trainer">
+          <img
+            src="<%= trainerData[0].trainer_image %>"
+            alt="trainer image"
+            class="trainer-image"
+          />
+          <div class="trainer-info">
+            <h2><%=trainerData[0].trainer_name%></h2>
+            <p><%= trainerData[0].description %></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pokemon-section">
+        <h1>Pokémons Owned</h1>
+        <div class="pokemon-grid">
+          <% trainerData.forEach(pokemon => { %>
+          <div class="card pokemon">
+            <img
+              src="<%= pokemon.pokemon_image %>"
+              alt="pokemon image"
+              class="pokemon-image"
+            />
+            <h3><%= pokemon.pokemon_name %></h3>
+          </div>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+    <div class="btn-container">
+      <button class="delete-btn">
+        <a href="/trainers/<%=trainerData[0].id%>/delete">Delete Trainer</a>
+      </button>
+    </div>
+  </body>
+</html>
