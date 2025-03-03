@@ -15,7 +15,6 @@
   </head>
   <body>
     <%- include("./partials/navbar.ejs") %>
-    <h1 class="heading"><%=pokemon.pokemon_name%></h1>
     <div class="pokemon-detail">
       <div class="image-col">
         <img
@@ -27,10 +26,17 @@
       </div>
 
       <div class="pokemon-info">
+        <p><strong>Name: </strong><%=pokemon.pokemon_name%></p>
         <p><strong>Type: </strong><%= pokemon.type_name %></p>
         <p><strong>Trainer: </strong><%= pokemon.trainer_name %></p>
         <p><strong>Description: </strong><%= pokemon.description %></p>
       </div>
     </div>
+    <div class="btn-container">
+      <button class="delete-pokemon-btn">
+        <a href="/pokemons/<%=pokemon.id%>/delete">Delete Pokemon</a>
+      </button>
+    </div>
+    <%- include("./partials/footer.ejs") %>
   </body>
 </html>
