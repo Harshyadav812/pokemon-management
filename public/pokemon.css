@@ -9,11 +9,6 @@ body {
   width: 100%;
 }
 
-.heading {
-  text-align: center;
-  padding: 1rem;
-}
-
 .pokemon-detail {
   display: flex;
   justify-content: space-evenly;
@@ -42,6 +37,29 @@ body {
   padding-top: 2rem;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.delete-pokemon-btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(147, 18, 18, 0.813);
+}
+
+.delete-pokemon-btn a {
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: black;
+  font-size: large;
+  font-weight: bold;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
 @media (max-width: 768px) {
   .pokemon-detail {
     flex-direction: column;
