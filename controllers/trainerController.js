@@ -10,11 +10,17 @@ async function getAllTrainers(req, res) {
 
 async function getTrainerById(req, res) {
   const id = req.params.id;
-  const trainer = await db.getTrainerById(id);
-  res.render("trainer", {
-    title: "Trainer",
-    trainer
+  const trainerData = await db.getTrainerById(id);
+  res.render("trainerDetails", {
+    title: `${trainerData[0].trainer_name}`,
+    trainerData
   })
 }
 
-module.exports = { getAllTrainers, getTrainerById }
+async function deleteTrainerById(req, res) {
+  const id = req.params.id;
+  await db.deleteTrainerById(id);
+  res.redirect("/trainers")
+}
+
+module.exports = { getAllTrainers, getTrainerById, deleteTrainerById }
