@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Homepage</title>
+    <link rel="stylesheet" href="/pokemon.css" />
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <main>
+      <h1 class="form-heading">Add Pokemon</h1>
+      <form
+        action="/pokemons/create"
+        method="post"
+        enctype="multipart/form-data"
+        id="addPokemonForm"
+      >
+        <div>
+          <label for="pokemon_name">Enter Pokemon Name:</label>
+          <input type="text" id="pokemon_name" name="pokemon_name" required />
+        </div>
+        <br /><br />
+        <div>
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required></textarea>
+        </div>
+        <br /><br />
+        <div>
+          <label for="image_file">Image Path:</label>
+          <input
+            type="file"
+            id="image_file"
+            name="image_file"
+            accept=".jpg, .png"
+            required
+          />
+        </div>
+        <br /><br />
+        <div>
+          <label for="type_name">Select Type: </label>
+          <select name="type_name" id="type_name">
+            <option value="">Select a Type</option>
+            <% types.forEach(type => { %>
+            <option value="<%= type.type_name %>"><%=type.type_name%></option>
+            <% }) %>
+          </select>
+        </div>
+        <br /><br />
+        <div>
+          <label for="trainer_name">Select Trainer: </label>
+          <select name="trainer_name" id="trainer_name">
+            <option value="">Select a Trainer</option>
+            <% trainers.forEach(trainer => { %>
+            <option value="<%= trainer.trainer_name %>">
+              <%=trainer.trainer_name%>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+        <br /><br />
+        <button type="submit">Add Pokemon</button>
+      </form>
+    </main>
+
+    <script>
+      document
+        .getElementById("addPokemonForm")
+        .addEventListener("submit", function (e) {
+          const fileInput = document.getElementById("image_file");
+          const file = fileInput.files[0];
+          if (file) {
+            const validExtensions = ["jpg", "png"];
+            const extension = file.name.split(".").pop().toLowerCase();
+            if (!validExtensions.includes(extension)) {
+              e.preventDefault();
+              alert("Please upload a .jpg or .png file.");
+            }
+          }
+        });
+    </script>
+  </body>
+</html>
