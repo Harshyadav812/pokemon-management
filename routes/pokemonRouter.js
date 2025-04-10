@@ -18,10 +18,10 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
   const ext = path.extname(file.originalname).toLowerCase();
-  if (ext === '.jpg' || ext === '.png') {
+  if (ext === '.jpg' || ext === '.png' || ext === '.webp') {
     cb(null, true);
   } else {
-    cb(new Error('Only .jpg and .png files are allowed'), false);
+    cb(new Error('Only .jpg, .png and .webp files are allowed'), false);
   }
 };
 
